@@ -13,6 +13,18 @@ function App() {
     const [platnosc, setPlatnosc] = useState<'Karta' | 'blik'>('blik');
     const [regulamin, setRegulamin] = useState<boolean>(true);
 
+    const calculateTotal = (): number => {
+        const ceny = {
+            kajak: 20,
+            rower: 35,
+            omega: 150
+        };
+        let suma = ceny[sprzet] * godziny;
+        if (instruktor) suma += 50 * godziny;
+        if (kapok) suma += 5;
+
+        return suma;
+    };
 }
 
 export default App
