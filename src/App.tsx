@@ -8,10 +8,12 @@ function App() {
         <form>
             <label>Podaj swoje imię: <input type="text" /*value={imie}*//></label><br/>
             <label>Wybierz, co chcesz wypożyczyć:<br/>
-                <input type="radio" value="kajak"/>Kajak (20zł/h)<br/>
-                <input type="radio" value="rower"/>Rower wodny (35zł/h)<br/>
-                <input type="radio" value="omega"/>Omega (150zł/h)  !WYMAGAMY PATENTU!<br/>
-            </label>
+                <select>
+                <option value="kajak">Kajak (20zł/h)</option>
+                <option value="rower">Rower wodny (35zł/h)</option>
+                <option value="omega">Omega (150zł/h)  !WYMAGAMY PATENTU!</option>
+                </select>
+            </label><br/>
             <label>Na ile godzin chcesz wynająć sprzęt?<br/>
                 <div style={{display: "flex", alignItems: "center", gap: "10px"}}>
                 <input type="range"
