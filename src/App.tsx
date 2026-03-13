@@ -22,9 +22,10 @@ function App() {
         let suma = ceny[sprzet] * godziny;
         if (instruktor) suma += 50 * godziny;
         if (kapok) suma += 5;
-
         return suma;
-    };
+    }
+
+
 }
 
 export default App
