@@ -1,4 +1,4 @@
-import {type ChangeEvent, useState} from 'react'
+import {type ChangeEvent, type SyntheticEvent, useState} from 'react'
 import './App.css'
 
 type Sprzet = 'kajak' | 'rower' | 'omega'
@@ -13,6 +13,7 @@ function App() {
     const [instruktor, setInstruktor] = useState<boolean>(false);
     const [platnosc, setPlatnosc] = useState<'Karta' | 'blik'>('blik');
     const [regulamin, setRegulamin] = useState<boolean>(true);
+    const [finalnaCena, setFinalnaCena] = useState<number>(0);
 
     //handlery
     const handleName =
@@ -29,6 +30,12 @@ function App() {
         (e: ChangeEvent<HTMLSelectElement>) => setPlatnosc(e.target.value as 'Karta' | 'blik');
     const handleRegulamin =
         (e: ChangeEvent<HTMLInputElement>) => setRegulamin(e.target.checked);
+
+    const handleSubmit = (e: SyntheticEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        const wynik = calculateTotal();
+        setFinalnaCena(wynik);
+    };
 
     //funkcja
     const calculateTotal = (): number => {
@@ -48,16 +55,38 @@ function App() {
     //html
     return (
         <>
-            <input value={imie} onChange={handleName} />
-            <select value={sprzet} onChange={handleSprzet}>...</select>
-            <input type="range" value={godziny} onChange={handleHours} />
-            <input type="checkbox" checked={kapok} onChange={handleKapok} />
-            <input type="checkbox" checked={instruktor} onChange={handleInstruktor} />
-            <select value={platnosc} onChange={handlePlatnosc}>...</select>
-            <input type="checkbox" checked={regulamin} onChange={handleRegulamin} />
+            <div>
+                <h1>Przystań Mazurska</h1>
+                <form style={{display: "flex", flexDirection: "column", justifyContent:"center"}}
+                onSubmit={handleSubmit}>
 
-            Wynik: {calculateTotal()} zł
-            Przycisk: <button disabled={!isFormValid}>Rezerwuję</button>
+                    <label>Podaj swoje imię: <input type="text" value={imie} onChange={handleName}/></label><br/>
+                    <label>Wybierz, co chcesz wypożyczyć:<br/>
+                        <select value={sprzet} onChange={handleSprzet}>
+                            <option value="kajak">Kajak (20zł/h)</option>
+                            <option value="rower">Rower wodny (35zł/h)</option>
+                            <option value="omega">Omega (150zł/h)  !WYMAGAMY PATENTU!</option>
+                        </select>
+                    </label><br/>
+                    <label>Na ile godzin chcesz wynająć sprzęt?<br/>
+                        <input type="range"
+                               min={1}
+                               max={8}
+                               step={1}
+                            value={godziny} onChange={handleHours}
+                        /> godzin...</label><br/>
+                    <label><input type="checkbox" checked={kapok} onChange={handleKapok}/>Chcę kapok dla dziecka (5zł)</label><br/>
+                    <label><input type="checkbox" checked={instruktor} onChange={handleInstruktor}/>Chcę pływać z instruktorem (50zł/h)</label><br/>
+                    <label>Płacę <select value={platnosc} onChange={handlePlatnosc}>
+                        <option value="karta">kartą</option>
+                        <option value="BLIK">BLIK-iem</option>
+                    </select></label><br/>
+                    <label><input type="checkbox" checked={regulamin} onChange={handleRegulamin}/>Akceptuję regulamin przystani</label>
+                    <button type="submit" disabled={!isFormValid}>Zarezerwuj</button>
+                </form>
+                <h2>Podsumowanie:</h2>
+                <p>Cena końcowa: <strong>{finalnaCena} zł</strong></p>
+            </div>
         </>
     );
 }
