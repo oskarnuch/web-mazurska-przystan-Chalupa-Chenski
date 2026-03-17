@@ -5,8 +5,16 @@ body{
   align-items: center;
   height: 100vh;
   width: 100vw;
-  background: #E3B23C;
   font-size: 90%;
+  background-image: url('./assets/img_1.png');
+}
+h2{
+  font-size: clamp(20px, 5vw, 35px);
+}
+h2,h3{
+  padding: 0;
+  margin:2vh 0;
+  text-align: center;
 }
 div{
   display: flex;
@@ -22,6 +30,7 @@ div{
 }
 span{
   height: 90vh;
+  max-height: 100vh;
   margin: 4px;
   border-radius: 10px;
   border: 5px solid #c69115;
@@ -37,11 +46,10 @@ form{
   margin: 0 auto;
   justify-content: flex-start;
   align-items: flex-start;
-  background-color: #588B8B;
 }
 input[type=checkbox]{
+  padding: 0;
   margin: 0;
-
 }
 input{
   flex: 1;
@@ -55,15 +63,19 @@ select{
   background-color: #a4c7c7;
   border: 1px solid #122C34;
   color: #122C34;
-  width: 100px;
+  width: 70px;
 }
 label{
-  margin-bottom: 10px;
+  margin-bottom: 1.5vh;
 }
 button{
   border: dotted 1px #588B8B;
   background-color: #122C34;
   width: 80%;
   height: 60%;
+  text-align: center;
+}
+p{
+  font-size: 120%;
   text-align: center;
 }

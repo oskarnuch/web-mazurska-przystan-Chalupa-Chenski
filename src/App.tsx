@@ -56,7 +56,7 @@ function App() {
     return (
         <>
             <div>
-                <span id="offer" style={{flex: 1}}>
+                <span id="offer" style={{flex: 3}}>
             <h2>Nasza oferta:</h2>
                 <h3>Sprzęt pływający</h3>
             <ul>
@@ -70,14 +70,13 @@ function App() {
                     <li>Instruktor - 50zł/h</li>
                 </ul>
         </span>
-                <span id="forms" style={{flex: 3}}>
-                <h2>Formularz rezerwacyjny</h2>
+                <span id="forms" style={{flex: 5}}>
+                <h2>Wypełnij formularz rezerwacyjny:</h2>
             <form style={{display: "flex", flexDirection: "column", justifyContent:"center"}}
                   onSubmit={handleSubmit}>
 
                 <label>Podaj swoje imię: <input type="text" value={imie} onChange={handleName}/></label><br/>
-                <label>Wybierz, co chcesz wypożyczyć:<br/>
-                    <select value={sprzet} onChange={handleSprzet}>
+                <label>Wybierz, co chcesz wypożyczyć: <select value={sprzet} onChange={handleSprzet}>
                         <option value="kajak">Kajak</option>
                         <option value="rower">Rower wodny</option>
                         <option value="omega">Omega !WYMAGAMY PATENTU!</option>
