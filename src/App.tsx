@@ -79,8 +79,9 @@ function App() {
                 <label>Wybierz, co chcesz wypożyczyć: <select value={sprzet} onChange={handleSprzet}>
                         <option value="kajak">Kajak</option>
                         <option value="rower">Rower wodny</option>
-                        <option value="omega">Omega !WYMAGAMY PATENTU!</option>
+                        <option value="omega">Omega</option>
                     </select>
+                    {sprzet==="omega"&& <h4>!WYMAGANY PATENT!</h4>}
                 </label><br/>
                 <label>Na ile godzin chcesz wynająć sprzęt?<br/>
                     <input type="range"

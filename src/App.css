@@ -1,4 +1,5 @@
 /*#E3B23C*/
+
 body{
   display: flex;
   justify-content: center;
@@ -6,7 +7,11 @@ body{
   height: 100vh;
   width: 100vw;
   font-size: 90%;
-  background-image: url('./assets/img_1.png');
+  background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+div{
 }
 h2{
   font-size: clamp(20px, 5vw, 35px);
@@ -15,6 +20,12 @@ h2,h3{
   padding: 0;
   margin:2vh 0;
   text-align: center;
+}
+h4{
+  padding: 0;
+  margin: 2vh 0 0 0;
+  text-align: center;
+  color:#E3B23C;
 }
 div{
   display: flex;
@@ -29,7 +40,7 @@ div{
   max-width: 500px;
 }
 span{
-  height: 90vh;
+  height: 93vh;
   max-height: 100vh;
   margin: 4px;
   border-radius: 10px;
@@ -37,7 +48,7 @@ span{
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  background-color: #588B8B;
+  background: linear-gradient(rgba(88, 139, 139, 0.9), rgba(88, 139, 139, 0.9));
   color: #F4FFFD;
 }
 form{
@@ -78,4 +89,6 @@ button{
 p{
   font-size: 120%;
   text-align: center;
+  margin: 0;
+  padding: 0;
 }
