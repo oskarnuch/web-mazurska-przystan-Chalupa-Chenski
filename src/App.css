@@ -1,13 +1,55 @@
 /*#E3B23C*/
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  font-size: 90%;
+  background-image: url('./assets/img_1.png');
+}
+h2{
+  font-size: clamp(20px, 5vw, 35px);
+}
+h2,h3{
+  padding: 0;
+  margin:2vh 0;
+  text-align: center;
+}
 div{
   display: flex;
   flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+#offer{
+  max-width: 300px;
+}
+#forms{
+  max-width: 500px;
+}
+span{
+  height: 90vh;
+  max-height: 100vh;
+  margin: 4px;
+  border-radius: 10px;
+  border: 5px solid #c69115;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
   background-color: #588B8B;
   color: #F4FFFD;
 }
 form{
-  flex: 2;
-  background-color: #588B8B;
+  display: flex;
+  max-width: 100%;
+  margin: 0 auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+input[type=checkbox]{
+  padding: 0;
+  margin: 0;
 }
 input{
   flex: 1;
@@ -15,17 +57,25 @@ input{
   border: 1px solid #122C34;
   color: #122C34;
   animation-range: initial;
+  width: 100px;
 }
 select{
   background-color: #a4c7c7;
   border: 1px solid #122C34;
   color: #122C34;
+  width: 70px;
 }
-input:focus{}
+label{
+  margin-bottom: 1.5vh;
+}
 button{
   border: dotted 1px #588B8B;
   background-color: #122C34;
   width: 80%;
   height: 60%;
+  text-align: center;
+}
+p{
+  font-size: 120%;
   text-align: center;
 }
