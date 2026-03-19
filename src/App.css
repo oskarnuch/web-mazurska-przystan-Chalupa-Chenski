@@ -1,42 +1,81 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/*#E3B23C*/
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  font-size: 90%;
+  background-image: url('./assets/img_1.png');
+}
+h2{
+  font-size: clamp(20px, 5vw, 35px);
+}
+h2,h3{
+  padding: 0;
+  margin:2vh 0;
   text-align: center;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+div{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+#offer{
+  max-width: 300px;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+#forms{
+  max-width: 500px;
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+span{
+  height: 90vh;
+  max-height: 100vh;
+  margin: 4px;
+  border-radius: 10px;
+  border: 5px solid #c69115;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  background-color: #588B8B;
+  color: #F4FFFD;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+form{
+  display: flex;
+  max-width: 100%;
+  margin: 0 auto;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
-
-.card {
-  padding: 2em;
+input[type=checkbox]{
+  padding: 0;
+  margin: 0;
 }
-
-.read-the-docs {
-  color: #888;
+input{
+  flex: 1;
+  background-color: #a4c7c7;
+  border: 1px solid #122C34;
+  color: #122C34;
+  animation-range: initial;
+  width: 100px;
+}
+select{
+  background-color: #a4c7c7;
+  border: 1px solid #122C34;
+  color: #122C34;
+  width: 70px;
+}
+label{
+  margin-bottom: 1.5vh;
+}
+button{
+  border: dotted 1px #588B8B;
+  background-color: #122C34;
+  width: 80%;
+  height: 60%;
+  text-align: center;
+}
+p{
+  font-size: 120%;
+  text-align: center;
 }
