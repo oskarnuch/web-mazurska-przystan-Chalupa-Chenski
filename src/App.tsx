@@ -81,7 +81,7 @@ function App() {
                         <option value="rower">Rower wodny</option>
                         <option value="omega">Omega</option>
                     </select>
-                    {sprzet==="omega"&& <h4>!WYMAGANY PATENT!</h4>}
+                    {sprzet=="omega"&& <h4>!WYMAGANY PATENT!</h4>}
                 </label><br/>
                 <label>Na ile godzin chcesz wynająć sprzęt?<br/>
                     <input type="range"
