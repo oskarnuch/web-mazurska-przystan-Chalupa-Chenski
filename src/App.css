@@ -12,6 +12,7 @@ body{
   background-size: cover;
 }
 div{
+    justify-content: center;
 }
 h2{
   font-size: clamp(20px, 5vw, 35px);
